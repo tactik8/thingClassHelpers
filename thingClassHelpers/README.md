@@ -5,7 +5,7 @@ JS library for thing classes
 ## Location
 
 ### Source code
-https://github.com/tactik8/dataHelpers
+https://github.com/tactik8/thingClassHelpers
 
 ### repl.it
 https://replit.com/@tactik8/thingClassHelpers
@@ -15,7 +15,9 @@ https://replit.com/@tactik8/thingClassHelpers
 
 ### From github
 ```
+git clone https://github.com/tactik8/jsonldHelpers ./utils/jsonldHelpers
 git clone https://github.com/tactik8/dataHelpers ./utils/dataHelpers
+git clone https://github.com/tactik8/thingClassHelpers ./utils/thingClassHelpers
 ```
 
 ## Test and publish
@@ -42,7 +44,9 @@ npm publish
 #### add in package.json 
 ``` 
 imports: {
+    "#jsonldHelpers": "./utils/jsonldHelpers/jsonldHelpers.js",
     "#dataHelpers": "./utils/dataHelpers/dataHelpers.js",
+    "#thingClassHelpers": "./utils/thingClassHelpers/thingClassHelpers.js",
 }
 ```
 
@@ -51,7 +55,9 @@ imports: {
 <script type="importmap">
     {
       "imports": {
-        "#dataHelpers": "/utils/dataHelpers/dataHelpers/dataHelpers.js"
+        "#jsonldHelpers": "/utils/jsonldHelpers/jsonldHelpers/jsonldHelpers.js",
+        "#dataHelpers": "/utils/dataHelpers/dataHelpers/dataHelpers.js",
+        "#thingClassHelpers": "/utils/thingClassHelpers/thingClassHelpers/thingClassHelpers.js"
       }
     }
   </script>
@@ -61,7 +67,7 @@ imports: {
 
  ### in code
 
-import { dataHelpers as dh } from '#dataHelpers'
+import { jsonldHelpers as jh } from '#jsonldHelpers'
 
 let record = {
     "@context": "https://schema.org/",
@@ -71,24 +77,11 @@ let record = {
 }
 
 
-let k = h.value.get(record, '@type')
+let k = jh.value.get(record, '@type')
 
 
 ```
 
-## Examples
-
-```
-let k = KrakenSchemas.get('Person')
-
-let p = k.getProperty('givenName')
-
-p.getLocalizedPropertyID('en-US')) --> 'first name'
-
-
-
-
-```
 
 ## Tests
 
