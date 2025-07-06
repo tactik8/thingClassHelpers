@@ -1,9 +1,9 @@
-
-import { Thing } from './src/thing/thing.models.js';
-import { ProgramMembership } from './src/ProgramMembershipClass.js';
-import { Role } from './src/RoleClass.js';
 import { Action } from './src/action/action.models.js';
-import { ProgramMembershipTier } from './src/MemberProgramTierClass.js';
+import { ProgramMembership } from './src/programMembership/programMembership.models.js';
+import { ProgramMembershipTier } from './src/programMembershipTier/programMembershipTier.models.js';
+import { Role } from './src/role/role.models.js';
+import { Thing } from './src/thing/thing.models.js';
+
 
 
 export const thingClassHelpers = {

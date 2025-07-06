@@ -1,6 +1,6 @@
 
 import { Thing } from '../thing/thing.models.js'
-import { Role } from './RoleClass.js'
+import { Role } from '../role/role.models.js'
 
 
 export class ProgramMembership  extends Thing {
@@ -35,7 +35,7 @@ export class ProgramMembership  extends Thing {
     get membershipStatus(){
         return this.getMembershipStatus()
     }
-    
+
     getMembershipStatus(date){
         date = date || new Date()
         if(!this.startDate || this.startDate > date){
@@ -46,11 +46,11 @@ export class ProgramMembership  extends Thing {
         }
         return true  
     }
-    
 
-    
+
+
     // getter and setter for member and role
-    
+
     get member(){
         this.set('member', this.get('member') || new Role())
         return this.get('member')
@@ -78,7 +78,7 @@ export class ProgramMembership  extends Thing {
         return this.member.set('roleName', value)
     }
 
-    
-    
+
+
 }
 

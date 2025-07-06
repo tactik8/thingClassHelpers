@@ -14,14 +14,14 @@ export class Role extends Thing {
     set roleName(value){
         this.set('roleName', value)
     }
-    
+
     get startDate(){
         return this.get('startDate')
     }
     set startDate(value){
         this.set('startDate', value)
     }
-    
+
     get endDate(){
         return this.get('endDate')
     }

@@ -1,6 +1,6 @@
 
 import { Thing } from '../thing/thing.models.js'
-import { Role } from './RoleClass.js'
+import { Role } from '../role/role.models.js'
 
 
 export class MemberProgram  extends Thing {
@@ -25,6 +25,6 @@ export class MemberProgram  extends Thing {
         this.set('hasTiers', value)
     }
 
-    
+
 }
 
