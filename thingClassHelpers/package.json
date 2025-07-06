@@ -1,0 +1,6 @@
+{
+    "type": "module",
+    "imports": {
+        "#jsonldHelpers": "./utils/jsonldHelpers/jsonldHelpers/jsonldHelpers.js"
+    }
+}
