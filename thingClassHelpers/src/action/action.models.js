@@ -8,6 +8,7 @@ export class Action extends Thing {
     constructor(object) {
         super("Action", undefined);
         this.object = object;
+        this.setActive()
     }
 
     // getter and setter
@@ -37,6 +38,13 @@ export class Action extends Thing {
     }
     set result(value) {
         this.record = actionService.setResult(this.record, value)
+    }
+
+    get results() {
+        return actionService.getResults(this.record)
+    }
+    set results(value) {
+        this.record = actionService.setResults(this.record, value)
     }
 
     get error() {
@@ -94,6 +102,9 @@ export class Action extends Thing {
   
 
     // Methods
+    setPotential(otherAction) {
+        this.record = actionService.set(this.record, otherAction)
+    }
     setPotential() {
         this.record = actionService.setPotential(this.record)
     }

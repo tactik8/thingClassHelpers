@@ -11,7 +11,9 @@ export const actionService = {
     getStartTime,
     getEndTime,
     getResult,
+    getResults,
     getError,
+    set,
     setObject,
     setInstrument,
     setAgent,
@@ -19,6 +21,7 @@ export const actionService = {
     setStartTime,
     setEndTime,
     setResult,
+    setResults,
     setError,
     setPotential,
     setActive,
@@ -99,6 +102,14 @@ function setResult(actionRecord, objectRecord){
     return h.values.set(actionRecord, 'result', objectRecord)
 }
 
+function getResults(actionRecord){
+    return h.values.get(actionRecord, 'result')
+}
+
+function setResults(actionRecord, objectRecord){
+    return h.values.set(actionRecord, 'result', objectRecord)
+}
+
 // error
 function getError(actionRecord){
     return h.value.get(actionRecord, 'error')
@@ -158,6 +169,13 @@ function isFailed(actionRecord){
 // -----------------------------------------------------
 
 
+function set(actionRecord, otherActionRecord){
+    actionRecord = setActionStatus(actionRecord, otherActionRecord.actionStatus)
+    actionRecord = setResults(actionRecord, otherActionRecord.results || otherActionRecord.result)
+    actionRecord = setError(actionRecord, otherActionRecord.error)
+    actionRecord = setEndTime(actionRecord, new Date())
+    return actionRecord
+}
 
 function setPotential(actionRecord){
     actionRecord = setActionStatus(actionRecord, "PotentialActionStatus")
