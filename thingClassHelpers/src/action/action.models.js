@@ -102,8 +102,8 @@ export class Action extends Thing {
   
 
     // Methods
-    setPotential(otherAction) {
-        this.record = actionService.set(this.record, otherAction)
+    setSame(otherAction) {
+        this.record = actionService.setSame(this.record, otherAction)
     }
     setPotential() {
         this.record = actionService.setPotential(this.record)

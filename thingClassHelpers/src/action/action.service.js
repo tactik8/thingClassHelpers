@@ -13,7 +13,7 @@ export const actionService = {
     getResult,
     getResults,
     getError,
-    set,
+    setSame,
     setObject,
     setInstrument,
     setAgent,
@@ -169,7 +169,7 @@ function isFailed(actionRecord){
 // -----------------------------------------------------
 
 
-function set(actionRecord, otherActionRecord){
+function setSame(actionRecord, otherActionRecord){
     actionRecord = setActionStatus(actionRecord, otherActionRecord.actionStatus)
     actionRecord = setResults(actionRecord, otherActionRecord.results || otherActionRecord.result)
     actionRecord = setError(actionRecord, otherActionRecord.error)
