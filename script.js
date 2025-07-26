@@ -7,6 +7,7 @@ function test(){
     let action = new thingClassHelpers.Action('test')
     action.name = 'testw'
 
+    console.log('n', action.name)
     action.setActive()
     console.log(JSON.stringify(action, null, 4))
 

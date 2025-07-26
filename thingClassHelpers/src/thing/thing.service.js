@@ -116,7 +116,7 @@ function getName(record, defaultValue){
     return h.value.get(record, 'name') || defaultValue
 }
 
-function setName(record){
+function setName(record, value){
     return h.value.set(record, 'name', value)
 }
 
