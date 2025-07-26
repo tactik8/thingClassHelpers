@@ -76,10 +76,10 @@ export class Thing {
 
     // getters and setters
     get name(){
-        return this.getName(this.record)
+        return sh.getName(this.record)
     }
     set name(value){
-        this.record = this.setName(this.record, value)
+        this.record = sh.setName(this.record, value)
     }
     get description(){
         return sh.getDescription(this.record)

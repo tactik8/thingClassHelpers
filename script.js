@@ -4,13 +4,14 @@ import { thingClassHelpers } from './thingClassHelpers/thingClassHelpers.js'
 
 
 function test(){
-    let action = new thingClassHelpers.Action()
+    let action = new thingClassHelpers.Action('test')
+    action.name = 'testw'
 
     action.setActive()
     console.log(JSON.stringify(action, null, 4))
 
 
-    action .object = {
+    action.object = {
             "@context": "https://schema.org/",
             "@type": "Thing",
             "@id": "thing1",
